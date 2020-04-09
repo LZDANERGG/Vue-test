@@ -2,11 +2,22 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link>|
+			<button @click="btn">LHT</button>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+	export default{
+		methods:{
+			btn(){
+				this.$router.push('/lht')
+			}
+		}
+	}
+</script>
 
 <style lang="less">
 #app {
