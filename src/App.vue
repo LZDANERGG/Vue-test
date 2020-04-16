@@ -1,23 +1,25 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/home" tag='button'>Home</router-link> |
-      <router-link to="/about" tag='button'>About</router-link> |
-			<router-link :to="{path:'/user',query:{name:'卡卡',sex:'男'}}" tag='button'>User</router-link> |
-			<button @click="btn">LHT</button>
+      <router-link to="/home" tag="button">Home</router-link>|
+      <router-link to="/about" tag="button">About</router-link>|
+      <router-link :to="{path:'/user',query:{name:'卡卡',sex:'男'}}" tag="button">User</router-link>|
+      <button @click="btn">LHT</button>
     </div>
-    <router-view/>
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
 <script>
-	export default{
-		methods:{
-			btn(){
-				this.$router.push('/lht')
-			}
-		}
-	}
+export default {
+  methods: {
+    btn() {
+      this.$router.push("/lht");
+    }
+  }
+};
 </script>
 
 <style lang="less">
@@ -32,12 +34,12 @@
 #nav {
   padding: 30px;
 
-	button {
-		color: red;
-		&.router-link-active{
-		color: green;
-		}
-	}
+  button {
+    color: red;
+    &.router-link-active {
+      color: green;
+    }
+  }
 
   a {
     font-weight: bold;

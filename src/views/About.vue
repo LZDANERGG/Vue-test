@@ -7,10 +7,33 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "About",
+  data() {
+    return {
+      path: "/about/aboutnews"
+    };
+  },
+  activated() {
+		console.log(this.path)
+    this.$router.push(this.path).catch(err => {
+      err;
+    });
+	},
+	
+  beforeRouteLeave(to, from, next) {
+		console.log(this.$route.path)
+    this.path = this.$route.path;
+    next();
+  }
+};
+</script>
+
 <style lang="less">
 .about {
   a {
-		color: blueviolet;
+    color: blueviolet;
     &.router-link-active {
       color: yellowgreen;
     }
