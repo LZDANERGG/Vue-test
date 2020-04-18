@@ -4,7 +4,8 @@
       <router-link to="/home" tag="button">Home</router-link>|
       <router-link to="/about" tag="button">About</router-link>|
       <router-link :to="{path:'/user',query:{name:'卡卡',sex:'男'}}" tag="button">User</router-link>|
-      <button @click="btn">LHT</button>
+      <button @click="btn">LHT</button> |
+      <router-link to="/hellovuex">HelloVuex</router-link>
     </div>
     <keep-alive>
       <router-view />
@@ -13,12 +14,13 @@
 </template>
 
 <script>
+
 export default {
   methods: {
     btn() {
       this.$router.push("/lht");
     }
-  }
+  },
 };
 </script>
 
@@ -44,6 +46,9 @@ export default {
   a {
     font-weight: bold;
     color: red;
+    &.router-link-active {
+      color: green;
+    }
   }
 }
 </style>

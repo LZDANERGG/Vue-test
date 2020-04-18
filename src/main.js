@@ -10,3 +10,12 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+// axios.all([axios({
+// 	url: 'http://	httpbin.org/'
+// }),axios({
+// 	url: 'http://httpbin.org/',
+// 	method:'get'
+// })]).then((res) => {
+// 	console.log(res);
+// })

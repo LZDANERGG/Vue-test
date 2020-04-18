@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Lht from '../views/Lht.vue'
 const AboutMe = () => import('../views/AboutMe') //懒加载方式
 const User = () => import('../views/User')
+const HelloVuex = () => import('../views/HelloVuex')
 Vue.use(VueRouter)
 
 const routes = [{
@@ -56,6 +57,13 @@ const routes = [{
 		component: User,
 		meta: {
 			title: '用户'
+		}
+	},
+	{
+		path:'/hellovuex',
+		component: HelloVuex,
+		meta: {
+			title: "Vuex"
 		}
 	}
 ]
